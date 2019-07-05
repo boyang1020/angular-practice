@@ -17,4 +17,11 @@ export class AppComponent {
   clearUsername() {
     this.username = '';
   }
+  show: boolean = true;
+  log = [];
+
+  onSelect() {
+    this.show = !this.show;
+    this.log.push(new Date());
+  }
 }

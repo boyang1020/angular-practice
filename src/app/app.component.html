@@ -8,6 +8,16 @@
       <input type="text" class="form-control" [(ngModel)]="username" />
       <p>{{ username }}</p>
       <button class="btn btn-primary" [disabled]="username === ''" (click)="clearUsername()">Reset Button</button>
+      <hr />
+      <!-- <button class="btn btn-primary" (click)="show = !show">Display Details</button> -->
+      <button class="btn btn-primary" (click)="onSelect()">Display Details</button>
+      <p *ngIf="show">mochi n boba</p>
+      <div
+        *ngFor="let logItem of log; let i = index"
+        [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'white', color: i >= 4 ? 'white' : 'black' }"
+      >
+        {{ logItem }}
+      </div>
     </div>
   </div>
 </div>
